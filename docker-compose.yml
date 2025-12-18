@@ -1,0 +1,40 @@
+version: '3'
+services:
+  # --- 1. フロントエンド (React) ---
+  app:
+    image: node:latest
+    working_dir: /app
+    volumes:
+      - ./frontend:/app  # ★変更推奨: ./frontend だけをマウントすると綺麗です
+    tty: true
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend  # バックエンドが起動してからフロントエンドを動かす
+
+  # --- 2. バックエンド (FastAPI) ★追加 ---
+  backend:
+    build: ./backend     # backendフォルダの中身を使ってビルドする
+    container_name: lol-backend
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      # ホスト名は 'localhost' ではなくサービス名の 'db' になります
+      DATABASE_URL: mysql+pymysql://root:root@db:3306/lol_app
+
+  # --- 3. データベース (MySQL) ---
+  db:
+    image: mysql:8.0
+    container_name: lol-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: lol_app
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
