@@ -11,6 +11,7 @@ services:
       - "5173:5173"
     depends_on:
       - backend  # バックエンドが起動してからフロントエンドを動かす
+    command: sh -c "npm install && npm run dev"
 
   # --- 2. バックエンド (FastAPI) ★追加 ---
   backend:
