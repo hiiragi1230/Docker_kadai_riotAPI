@@ -3,7 +3,6 @@
 League of Legendsの戦績を検索・分析し、プレイヤーのパフォーマンスを自動評価するフルスタックWebアプリケーションです。
 Riot APIを使用し、直近の試合データの取得、MVPの判定、ロールごとの成績評価（Great/Good/Bad）を行います。
 
-![Project Screenshot](https://via.placeholder.com/800x400?text=Screen+Shot+PlaceHolder)
 ## ✨ 特徴 (Features)
 
 * **戦績検索**: Riot ID (GameName #TagLine) でプレイヤーを検索。
