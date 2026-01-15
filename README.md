@@ -69,7 +69,7 @@ docker-compose up --build
     Local: http://localhost:5173
 
 ⚙️ 構成 (Project Structure)
-
+```
 .
 ├── api/                # Backend (FastAPI)
 │   ├── main.py         # APIロジック・DB設計・評価アルゴリズム
@@ -81,6 +81,7 @@ docker-compose up --build
 │   └── Dockerfile
 ├── docker-compose.yml  # コンテナ構成定義
 └── README.md
+```
 
 ⚠️ 注意点 (Note)
 
