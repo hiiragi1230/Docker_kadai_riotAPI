@@ -46,6 +46,7 @@ Riot APIを使用し、直近の試合データの取得、MVPの判定、ロー
 ```bash
 git clone <このリポジトリのURL>
 cd <フォルダ名>
+```
 ### 3. APIキーの設定
 
 api/main.py を開き、Riot APIキーを設定してください。
