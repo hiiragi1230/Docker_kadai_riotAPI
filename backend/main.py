@@ -37,7 +37,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-API_KEY = "RGAPI-059cc6d2-0f56-45c4-8198-19208b44adf5" # ★キーをセット
+API_KEY = "RGAPI-012dd7d3-bee6-43d5-88ac-b0be437ad8bc" # ★キーをセット
 REGION = "asia"
 HEADERS = {"X-Riot-Token": API_KEY}
 

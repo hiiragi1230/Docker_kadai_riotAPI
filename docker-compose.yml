@@ -17,6 +17,7 @@ services:
   backend:
     build: ./backend     # backendフォルダの中身を使ってビルドする
     container_name: lol-backend
+    restart: always
     ports:
       - "8000:8000"
     depends_on:

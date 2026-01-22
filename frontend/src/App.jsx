@@ -21,7 +21,7 @@ function App() {
 
     try {
       // エンドポイントが変わったので修正 /history/
-      const response = await fetch(`http://10.96.20.131:8000/history/${name}/${tag}`);
+      const response = await fetch(`/api/history/${name}/${tag}`);
       
       if (!response.ok) {
         throw new Error('ユーザーが見つからないか、データが取得できません');
