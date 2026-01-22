@@ -8,7 +8,6 @@ function App() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const getChampIcon = (champName) => {
-    // 稀にAPIの名前と画像ファイル名が違うケースがありますが(Fiddlesticks等)、基本はこれで出ます
     return `https://ddragon.leagueoflegends.com/cdn/16.1.1/img/champion/${champName}.png`;
   }
 
@@ -20,7 +19,6 @@ function App() {
     setData(null);
 
     try {
-      // エンドポイントが変わったので修正 /history/
       const response = await fetch(`/api/history/${name}/${tag}`);
       
       if (!response.ok) {
@@ -87,7 +85,7 @@ function App() {
                     <div className="kda-text">{match.target_player.kda_display}</div>
                   </div>
 
-                  {/* ★ここが新機能！評価バッジ表示エリア */}
+                  {/* 評価バッジ表示エリア */}
                   <div className={`grade-badge ${match.target_player.evaluation.grade}`}>
                     <div className="grade-title">{match.target_player.evaluation.grade}</div>
                     <div className="grade-reason">{match.target_player.evaluation.reason}</div>
